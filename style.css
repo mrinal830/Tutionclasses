@@ -1,0 +1,20 @@
+#button{
+    background-color: rgb(228, 70, 70);
+    color: yellow;
+    margin: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   margin-left: 2.5cm;
+   margin-top:0.2cm ;
+}
+#button:hover{
+    background-color: rgb(234, 27, 27);
+}
+h1{
+    color: rgb(43, 93, 201);
+    text-align: center;
+    text-decoration:underline ;
+    text-decoration-color: rgb(255, 72, 0);
+    font-size: 900;
+}
