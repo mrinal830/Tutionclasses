@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+        }
+
+        .cart-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cart-header {
+            font-size: 28px;
+            font-weight: bold;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+        }
+
+        .checkout-button {
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            text-align: center;
+        }
+
+        .checkout-button:hover {
+            background: linear-gradient(90deg, #0056b3, #003f7f);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-header">Your Cart</div>
+        <div id="cart-summary" class="cart-summary"></div>
+        <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <script>
+        // Retrieve selected product from localStorage
+        const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+        // Display product summary
+        const cartSummary = document.getElementById('cart-summary');
+        if (product) {
+            cartSummary.innerHTML = `
+                <div><strong>Product:</strong> ${product.title}</div>
+                <div><strong>Price:</strong> ${product.price}</div>
+                <div><strong>Description:</strong> ${product.description}</div>
+            `;
+        } else {
+            cartSummary.innerHTML = `<div>No product added to the cart.</div>`;
+        }
+
+        // Handle checkout
+        function checkout() {
+            if (product) {
+                window.location.href = 'order-details.html';  // Redirect to order details page
+            } else {
+                alert('No product in the cart.');
+            }
+        }
+    </script>
+</body>
+</html>
