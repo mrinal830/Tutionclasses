@@ -1,20 +1,61 @@
-#button{
-    background-color: rgb(228, 70, 70);
-    color: yellow;
-    margin: 0;
+.p1{
+    color: red;
+    text-decoration: underline;
+    font-weight: 700;
+    
+}
+
+.text-container {
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ff8c00; /* Simulated cursor */
+    color: #ff8c00;
+    background: linear-gradient(to right, #ff8c00, #ff3d00, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 0; /* Start with no visible text */
+    animation: typing 10s steps(40) infinite, blink 0.8s step-end infinite alternate;
+  }
+  
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 38ch; /* Adjust for the number of characters in your text */
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  @keyframes blink {
+    from {
+      border-right-color: #ff8c00;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  
+  @keyframes backgroundShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  #img{
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-   margin-left: 2.5cm;
-   margin-top:0.2cm ;
-}
-#button:hover{
-    background-color: rgb(234, 27, 27);
-}
-h1{
-    color: rgb(43, 93, 201);
-    text-align: center;
-    text-decoration:underline ;
-    text-decoration-color: rgb(255, 72, 0);
-    font-size: 900;
-}
+    border-radius: 5px;
+  }
+  #i1{
+    border:none;
+    border-radius: 100%;
+  }
